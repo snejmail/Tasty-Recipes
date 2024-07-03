@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+       <section id="create-page" class="auth">
+
+        <div class="container">
+
+          <form id="delete" method="post" action="{% url 'delete_profile' %}">
+            <input class="btn submit" type="submit" value="Yes" />
+          </form>
+        </div>
+      </section>
+
+{% endblock %}

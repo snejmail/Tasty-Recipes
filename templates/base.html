@@ -1,0 +1,40 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style/style.css'%}"/>
+    <title>TastyRecipesApp</title>
+</head>
+
+<body>
+    <div id="box">
+<header>
+
+    <h1><a class="index-navigation" href="{% url 'home_page' %}"><span>Tasty Recipes</span></a></h1>
+    <nav>
+        <a href="{% url 'home_page' %}">Home</a>
+        {% if profile_exists %}
+            <a href="{% url 'catalogue' %}">Catalogue</a>
+            <a href="{% url 'create_recipe' %}">Create Recipe</a>
+            <a href="{% url 'details_profile' profile_id %}">Profile</a>
+        {% else %}
+            <a href="{% url 'create_profile' %}">Create Profile</a>
+        {% endif %}
+
+    </nav>
+</header>
+    
+            {% block content %}
+            {% endblock %}
+
+<footer>
+    &copy;Tasty Recipes 2024. All rights reserved.
+</footer>    
+    </div>
+</body>
+
+</html>
